@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="tutorial">
+	<head>
+		<meta charset="utf-8">
+		<title>html5 less angularJS</title>
+		<link rel="stylesheet/css" type="text/css" href="./css/reset.css">
+		<link rel="stylesheet/less" type="text/css" href="./css/style.less">
+		<script src="./js/less.min.js"></script>
+		<script src="./js/angular.js"></script>
+		<script src="./js/app.js"></script>
+	</head>
+	<body>
+		<header>
+			header
+		</header>
+		<nav>
+			nav
+		</nav>
+		<div>
+			<video src="video/video.ogv" width='320' height='240' controls='controls'></video>
+		</div>
+		<div ng-controller="defaultCtrl">
+			<label>Имя:</label>
+			<input type="text" ng-model="yourName">
+			<h1>Привет, {{yourName}}!</h1>
+			<button ng-click="sayHello(yourName)">Сказать привет</button>
+			<h2>{{ctrl.data.name}}</h2>
+		</div>
+		<footer>
+			footer
+		</footer>
+	</body>
+</html>
