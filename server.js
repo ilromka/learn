@@ -1,6 +1,24 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
+var mysql = require('mysql');
+
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  database : 'learn',
+  user     : 'learn',
+  password : 'admin',
+});
+connection.connect();
+connection.query('SELECT * FROM main', function(err, rows, fields)
+{
+  if(err)
+  {
+	  throw err;
+  }
+  console.log('Query result: ', rows);
+});
+connection.end();
 
 http.createServer(function(request, response)
 {
@@ -44,6 +62,6 @@ http.createServer(function(request, response)
 			response.end();
 		}
 	});
-}).listen(8080);
+}).listen(8181);
 
-console.log('Server running at 127.0.0.1:8080/');
+console.log('Server running at 127.0.0.1:8181/');
