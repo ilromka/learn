@@ -9,6 +9,7 @@ app.controller("defaultCtrl", ["$scope", function($scope) {
         alert("Привет, " + name);
     }
 	this.data = {
-		'name' : 'defaultCtrl'
+		'name' : 'defaultCtrl',
+		'version' : '1.0'
 	};
 }]);
